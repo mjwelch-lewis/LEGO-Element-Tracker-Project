@@ -21,9 +21,81 @@ const elementSchema = {
 	color: String,
 	colorID: String,
 	quantity: Number,
+	imageURL: String,
 }
 
 const Element = mongoose.model("element", elementSchema);
+
+// Create route called from create.html
+app.post("/create", function(request, response){
+	let newElement = new Element({
+		itemID: request.body.itemID,
+		designID: request.body.designID,
+		description: request.body.description,
+		color: request.body.color,
+		colorID: request.body.colorID,
+		quantity: request.body.quantity,
+		imageURL: `https://rondotruck.com/parts/${request.body.itemID}.jpg`,
+	})
+	
+	newElement.save();
+	response.redirect("/");
+})
+
+// Read route
+app.get("/read", function(request, response) {
+	Element.find({}).then(elements => { 
+		response.type('text/html');
+		response.write(`<!DOCTYPE html>
+		<html>
+		<head>
+			<title>Element Inventory</title>
+			<link rel="stylesheet" href="style.css">
+		</head>
+		<body>
+			<main>
+				<h1>Your Elements:</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Item ID</th>
+							<th>Design ID</th>
+							<th>Description</th>
+							<th>Color</th>
+							<th>Color ID</th>
+							<th>Quantity</th>
+							<th>Image</th>
+						</tr>
+					</thead>
+					<tbody>
+					${renderElements(elements)}
+					</tbody>
+				</table>
+			</main>
+		</body>
+		</html>`)
+		response.end();
+		response.send();
+	})
+})
+
+//Prints the database contents to the user's browser
+const renderElements = (elementsArray) => {
+	let text = ``;
+	elementsArray.forEach((element)=>{
+		text += `<tr>
+		<td>${element.itemID}</td>
+		<td>${element.designID}</td>
+		<td>${element.description} 1x1</td>
+		<td>${element.color}</td>
+		<td>${element.colorID}</td>
+		<td>${element.quantity}</td>
+		<td><img src="https://rondotruck.com/parts/${element.itemID}.jpg" alt=""></td>
+	</tr>`
+	})
+	
+	return text
+}
 
 const port = process.env.PORT || 3000
 app.get('/test', function(request, response) {
