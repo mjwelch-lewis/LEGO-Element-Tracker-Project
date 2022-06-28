@@ -1,0 +1,108 @@
+main {
+    width: 80%;
+    min-width: 340px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.control-label {
+    font-size: 16pt;
+}
+
+.button {
+  appearance: button;
+  background-color: #1652F0;
+  border: 1px solid #1652F0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 14px;
+  line-height: 1.15;
+  overflow: visible;
+  padding: 12px 24px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: all 80ms ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+}
+
+.button:disabled {
+  opacity: .5;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:hover {
+  background-color: #0A46E4;
+  border-color: #0A46E4;
+}
+
+.button:active {
+  background-color: #0039D7;
+  border-color: #0039D7;
+}
+
+table {
+    border-spacing: 0px;
+    width: 100%;
+}
+
+.table td, .table th {
+    padding: .75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+}
+
+dt {
+    font-weight: 700;
+  }
+  
+dd {
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+}
+
+.description-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.description-dark {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+}
+
+.description-light {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+}

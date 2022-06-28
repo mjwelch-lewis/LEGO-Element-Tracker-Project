@@ -21,7 +21,6 @@ const elementSchema = {
 	color: String,
 	colorID: String,
 	quantity: Number,
-	imageURL: String,
 }
 
 const Element = mongoose.model("element", elementSchema);
