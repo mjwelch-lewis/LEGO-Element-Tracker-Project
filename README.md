@@ -8,4 +8,6 @@ Initial Usage:
 - npm install express
 - npm start
 
+Link to final project proposal: https://final-project-proposal-mw.azurewebsites.net/
+
 
